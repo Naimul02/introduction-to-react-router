@@ -22,10 +22,11 @@ const router = createBrowserRouter([
         element: <Contact></Contact>,
       },
       {
-        path : '/users',
-        loader : () => fetch("https://jsonplaceholder.typicode.com/users"),
-        element: <Users></Users>
-      }
+        // users route a gele  tokhon amar data lagbe se khetre amra loader use korte pari.
+        path: "/users",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+        element: <Users></Users>,
+      },
     ],
   },
 ]);
