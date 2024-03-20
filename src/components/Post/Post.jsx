@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Post = ({ post }) => {
   const { id, title } = post;
+
+  // btn a click ba onno kichu te click korle tumi kono ekta route a jete caw . se khetre tumi useNavigate() use korte paro.
+  const navigate = useNavigate();
 
   const postStyle = {
     border: "2px solid green",
     padding: "5px",
     borderRadius: "20px",
+  };
+
+  const handleShowDetail = () => {
+    navigate(`/post/${id}`);
   };
   return (
     <div style={postStyle}>
@@ -15,6 +22,8 @@ const Post = ({ post }) => {
       <Link to={`/post/${id}`}>
         <button>Show Details</button>
       </Link>
+
+      <button onClick={handleShowDetail}>Click to see details</button>
     </div>
   );
 };
